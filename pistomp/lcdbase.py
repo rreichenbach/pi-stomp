@@ -187,6 +187,8 @@ class Lcdbase(abstract_lcd.Lcd):
             if fss[fs_id] is None:
                 continue
             f = fss[fs_id]
+            if f.lcd_hide:
+                continue
             color = self.valid_color(f.lcd_color)
             if self.color_plugin_bypassed is not None and not f.enabled:
                 color = self.color_plugin_bypassed

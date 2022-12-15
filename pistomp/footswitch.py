@@ -34,6 +34,7 @@ class Footswitch(gpioswitch.GpioSwitch):
         self.preset_callback = None
         self.preset_callback_arg = None
         self.lcd_color = None
+        self.lcd_hide = False
 
         if led_pin is not None:
             GPIO.setup(led_pin, GPIO.OUT)
@@ -57,6 +58,9 @@ class Footswitch(gpioswitch.GpioSwitch):
 
     def set_lcd_color(self, color):
         self.lcd_color = color
+
+    def set_lcd_hide(self, hide):
+        self.lcd_hide = hide
 
     def pressed(self, short):
         # If a footswitch can be mapped to control a relay, preset, MIDI or all 3

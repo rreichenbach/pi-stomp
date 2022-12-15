@@ -260,4 +260,8 @@ class Hardware:
                 if Token.COLOR in f:
                     fs.set_lcd_color(f[Token.COLOR])
 
+                # HIDE
+                if Token.HIDE in f:
+                    fs.set_lcd_hide(f[Token.HIDE])
+
             idx += 1
